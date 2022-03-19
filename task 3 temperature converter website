@@ -1,0 +1,77 @@
+HTML SOURCE CODE...
+<h1>TEMPERATURE CONVERTER</h1>
+
+<input type="text" id="fahrenheit" placeholder="Fahrenheit" name="f" value="" />
+
+<input type="text" id="celsius" placeholder="Celsius" name="c" value="" />
+
+<button id="convert">Convert!</button>
+<button id="clear">Reset</button>
+
+CSS SOURCE CODE
+#convert{
+  background-color: #ffe4e1;
+}
+#convert:hover {
+  background-color:#800080;
+}
+h1 {
+  font-family: cursive;
+  color: 	#000000;
+}
+input {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 2em;
+  color: #f4a55a;
+  font-family: cursive, sans-serif;
+}
+::-webkit-input-placeholder {
+   color: 	#ff0000;
+}
+:-moz-placeholder { 
+   color: 	#00FFFF;  
+}
+::-moz-placeholder {  
+   color:	#00FFFF;  
+}
+:-ms-input-placeholder {  
+   color: 	#00FFFF;  
+}
+button {
+  padding: 10px;
+  font-size: 1.2em;
+  color: #000080;
+}
+ 
+ JAVASCRIPT SOURCE CODE
+ document.getElementById('convert').onclick = tempConvert;
+document.getElementById('clear').onclick = clearForm;
+
+function tempConvert() {
+    
+    var fahrenheit = document.getElementById("fahrenheit").value;
+    var celsius = document.getElementById("celsius").value;
+  
+  if (fahrenheit != '') {
+        celsius = (parseFloat(fahrenheit) - 32) / 1.8;
+    } else {
+        fahrenheit = (parseFloat(celsius) * 1.8) + 32;
+    }
+  
+
+
+    document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
+    document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
+}
+
+
+function clearForm() {
+    document.getElementById('fahrenheit').value = '';
+    document.getElementById('celsius').value = '';
+} 
+
+
+
+
